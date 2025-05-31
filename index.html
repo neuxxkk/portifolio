@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seu Nome - Desenvolvedor</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #111827; /* bg-gray-900 */
+            color: #F3F4F6; /* text-gray-100 */
+        }
+        .techno-gradient {
+            background: linear-gradient(90deg, #3B82F6, #8B5CF6); /* blue-500 to purple-500 */
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .project-card {
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+        .project-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 20px rgba(59, 130, 246, 0.3), 0 6px 6px rgba(139, 92, 246, 0.2);
+        }
+        .skill-tag {
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        .skill-tag:hover {
+            background-color: #3B82F6; /* blue-500 */
+            color: white;
+        }
+        /* Custom scrollbar for a more modern look */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #1F2937; /* bg-gray-800 */
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #3B82F6; /* blue-500 */
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #2563EB; /* blue-600 */
+        }
+        nav a {
+            position: relative;
+            transition: color 0.3s ease;
+        }
+        nav a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -4px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #8B5CF6; /* purple-500 */
+            transition: width 0.3s ease;
+        }
+        nav a:hover::after {
+            width: 100%;
+        }
+        nav a:hover {
+            color: #A5B4FC; /* indigo-300 */
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <header class="bg-gray-900/80 backdrop-blur-md sticky top-0 z-50 shadow-lg">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold techno-gradient">Seu Nome</a>
+            <div class="space-x-4 md:space-x-6 text-gray-300">
+                <a href="#about" class="hover:text-blue-400">Sobre</a>
+                <a href="#projects" class="hover:text-blue-400">Projetos</a>
+                <a href="#skills" class="hover:text-blue-400">Habilidades</a>
+                <a href="#contact" class="hover:text-blue-400">Contato</a>
+            </div>
+        </nav>
+    </header>
+
+    <section id="hero" class="min-h-screen flex items-center justify-center bg-cover bg-center" style="background-image: linear-gradient(rgba(17, 24, 39, 0.8), rgba(17, 24, 39, 0.9)), url('https://placehold.co/1920x1080/1a202c/3b82f6?text=Tech+Background');">
+        <div class="text-center p-6">
+            <h1 class="text-5xl md:text-7xl font-extrabold mb-4">
+                Olá, eu sou <span class="techno-gradient">Seu Nome</span>
+            </h1>
+            <p class="text-xl md:text-2xl text-gray-300 mb-8 max-w-2xl mx-auto">
+                Estudante de Desenvolvimento de Sistemas, transformando ideias em soluções de software e hardware inovadoras.
+            </p>
+            <a href="#projects" class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-8 rounded-lg text-lg transition duration-300 shadow-lg hover:shadow-blue-500/50 transform hover:scale-105">
+                Ver Meus Projetos
+            </a>
+        </div>
+    </section>
+
+    <section id="about" class="py-20 bg-gray-800">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-12 techno-gradient">Sobre Mim</h2>
+            <div class="max-w-3xl mx-auto bg-gray-900 p-8 rounded-xl shadow-2xl">
+                <p class="text-lg text-gray-300 leading-relaxed mb-4">
+                    Sou um estudante dedicado de Desenvolvimento de Sistemas no Colégio Técnico da UFMG (COLTEC). Minha paixão reside na análise e desenvolvimento de soluções tecnológicas, buscando sempre aprender e aplicar meus conhecimentos para resolver problemas complexos e criar projetos inovadores.
+                </p>
+                <p class="text-lg text-gray-300 leading-relaxed mb-4">
+                    Tenho experiência prática no desenvolvimento de hardware e software, com foco em sistemas embarcados, IoT e desenvolvimento web. Gosto de explorar novas tecnologias e metodologias para aprimorar minhas habilidades e contribuir de forma significativa em desafios diários.
+                </p>
+                <p class="text-lg text-gray-300 leading-relaxed">
+                    Estou sempre em busca de oportunidades para expandir minha experiência, colaborar em projetos desafiadores e fazer a diferença através da tecnologia.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="py-20">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-16 techno-gradient">Meus Projetos</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+                <div class="project-card bg-gray-800 rounded-xl shadow-xl overflow-hidden flex flex-col">
+                    <img src="https://placehold.co/600x400/1f2937/3b82f6?text=IoT+Projects" alt="IoT Projects" class="w-full h-48 object-cover">
+                    <div class="p-6 flex flex-col flex-grow">
+                        <h3 class="text-2xl font-semibold mb-2 text-blue-400">IoT-projects</h3>
+                        <p class="text-gray-400 text-sm mb-4 flex-grow">Projetos pessoais e profissionais na área de Internet das Coisas (IoT), explorando a integração de hardware e software.</p>
+                        <div class="mb-4">
+                            <span class="inline-block bg-gray-700 text-gray-300 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded-full">C++</span>
+                            <span class="inline-block bg-gray-700 text-gray-300 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded-full">Hardware</span>
+                        </div>
+                        <a href="https://github.com/neuxxkk/IoT-projects" target="_blank" class="mt-auto self-start text-blue-500 hover:text-blue-400 font-semibold transition duration-300 group">
+                            Ver no GitHub <i class="fas fa-arrow-right ml-1 transform group-hover:translate-x-1 transition-transform"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="project-card bg-gray-800 rounded-xl shadow-xl overflow-hidden flex flex-col">
+                    <img src="https://placehold.co/600x400/1f2937/eab308?text=Pomodoro+Timer" alt="Pomodoro Timer" class="w-full h-48 object-cover">
+                    <div class="p-6 flex flex-col flex-grow">
+                        <h3 class="text-2xl font-semibold mb-2 text-yellow-400">Pomodoro Timer</h3>
+                        <p class="text-gray-400 text-sm mb-4 flex-grow">Um temporizador Pomodoro desenvolvido para auxiliar na organização e foco durante os estudos e trabalho.</p>
+                        <div class="mb-4">
+                            <span class="inline-block bg-gray-700 text-gray-300 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded-full">JavaScript</span>
+                            <span class="inline-block bg-gray-700 text-gray-300 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded-full">HTML</span>
+                            <span class="inline-block bg-gray-700 text-gray-300 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded-full">CSS</span>
+                        </div>
+                        <a href="https://github.com/neuxxkk/pomodoro" target="_blank" class="mt-auto self-start text-yellow-500 hover:text-yellow-400 font-semibold transition duration-300 group">
+                            Ver no GitHub <i class="fas fa-arrow-right ml-1 transform group-hover:translate-x-1 transition-transform"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="project-card bg-gray-800 rounded-xl shadow-xl overflow-hidden flex flex-col">
+                    <img src="https://placehold.co/600x400/1f2937/f472b6?text=Projeto+WebSite" alt="Projeto WebSite" class="w-full h-48 object-cover">
+                    <div class="p-6 flex flex-col flex-grow">
+                        <h3 class="text-2xl font-semibold mb-2 text-pink-400">Projeto-WebSite</h3>
+                        <p class="text-gray-400 text-sm mb-4 flex-grow">Desenvolvimento de um website explorando conceitos fundamentais de HTML e estrutura web.</p>
+                        <div class="mb-4">
+                            <span class="inline-block bg-gray-700 text-gray-300 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded-full">HTML</span>
+                            <span class="inline-block bg-gray-700 text-gray-300 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded-full">CSS</span>
+                        </div>
+                        <a href="https://github.com/neuxxkk/Projeto-WebSite" target="_blank" class="mt-auto self-start text-pink-500 hover:text-pink-400 font-semibold transition duration-300 group">
+                            Ver no GitHub <i class="fas fa-arrow-right ml-1 transform group-hover:translate-x-1 transition-transform"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="project-card bg-gray-800 rounded-xl shadow-xl overflow-hidden flex flex-col">
+                    <img src="https://placehold.co/600x400/1f2937/22c55e?text=Neural+Network" alt="Neural Network" class="w-full h-48 object-cover">
+                    <div class="p-6 flex flex-col flex-grow">
+                        <h3 class="text-2xl font-semibold mb-2 text-green-400">Neural-Network</h3>
+                        <p class="text-gray-400 text-sm mb-4 flex-grow">Implementação de uma rede neural utilizando Python, baseada no método de Tariq Rashid.</p>
+                        <div class="mb-4">
+                            <span class="inline-block bg-gray-700 text-gray-300 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded-full">Python</span>
+                            <span class="inline-block bg-gray-700 text-gray-300 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded-full">IA</span>
+                        </div>
+                        <a href="https://github.com/neuxxkk/Neural-Network" target="_blank" class="mt-auto self-start text-green-500 hover:text-green-400 font-semibold transition duration-300 group">
+                            Ver no GitHub <i class="fas fa-arrow-right ml-1 transform group-hover:translate-x-1 transition-transform"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="project-card bg-gray-800 rounded-xl shadow-xl overflow-hidden flex flex-col">
+                    <img src="https://placehold.co/600x400/1f2937/8b5cf6?text=Pong+AI" alt="Pong AI" class="w-full h-48 object-cover">
+                    <div class="p-6 flex flex-col flex-grow">
+                        <h3 class="text-2xl font-semibold mb-2 text-purple-400">PongIA</h3>
+                        <p class="text-gray-400 text-sm mb-4 flex-grow">Um jogador de Pong com Inteligência Artificial desenvolvido em Java utilizando a biblioteca Processing.</p>
+                        <div class="mb-4">
+                            <span class="inline-block bg-gray-700 text-gray-300 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded-full">Processing</span>
+                            <span class="inline-block bg-gray-700 text-gray-300 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded-full">Java</span>
+                            <span class="inline-block bg-gray-700 text-gray-300 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded-full">IA</span>
+                        </div>
+                        <a href="https://github.com/neuxxkk/PongIA" target="_blank" class="mt-auto self-start text-purple-500 hover:text-purple-400 font-semibold transition duration-300 group">
+                            Ver no GitHub <i class="fas fa-arrow-right ml-1 transform group-hover:translate-x-1 transition-transform"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="project-card bg-gray-800 rounded-xl shadow-xl overflow-hidden flex flex-col">
+                    <img src="https://placehold.co/600x400/1f2937/ec4899?text=Graph+Algorithms" alt="Graph Algorithms" class="w-full h-48 object-cover">
+                    <div class="p-6 flex flex-col flex-grow">
+                        <h3 class="text-2xl font-semibold mb-2 text-pink-500">Graph-Algorithms</h3>
+                        <p class="text-gray-400 text-sm mb-4 flex-grow">Implementação de algoritmos de busca e inserção em grafos binários/não-binários, direcionados e não-direcionados.</p>
+                        <div class="mb-4">
+                            <span class="inline-block bg-gray-700 text-gray-300 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded-full">Python</span>
+                            <span class="inline-block bg-gray-700 text-gray-300 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded-full">Algoritmos</span>
+                        </div>
+                        <a href="https://github.com/neuxxkk/Graph-Algorithms" target="_blank" class="mt-auto self-start text-pink-600 hover:text-pink-500 font-semibold transition duration-300 group">
+                            Ver no GitHub <i class="fas fa-arrow-right ml-1 transform group-hover:translate-x-1 transition-transform"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="project-card bg-gray-800 rounded-xl shadow-xl overflow-hidden flex flex-col">
+                    <img src="https://placehold.co/600x400/1f2937/06b6d4?text=OBI+Training" alt="OBI Training" class="w-full h-48 object-cover">
+                    <div class="p-6 flex flex-col flex-grow">
+                        <h3 class="text-2xl font-semibold mb-2 text-cyan-400">OBI</h3>
+                        <p class="text-gray-400 text-sm mb-4 flex-grow">Códigos e estudos para treinamento da Olimpíada Brasileira de Informática (OBI).</p>
+                        <div class="mb-4">
+                            <span class="inline-block bg-gray-700 text-gray-300 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded-full">Python</span>
+                            <span class="inline-block bg-gray-700 text-gray-300 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded-full">Programação Competitiva</span>
+                        </div>
+                        <a href="https://github.com/neuxxkk/OBI" target="_blank" class="mt-auto self-start text-cyan-500 hover:text-cyan-400 font-semibold transition duration-300 group">
+                            Ver no GitHub <i class="fas fa-arrow-right ml-1 transform group-hover:translate-x-1 transition-transform"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="project-card bg-gray-800 rounded-xl shadow-xl overflow-hidden flex flex-col">
+                    <img src="https://placehold.co/600x400/1f2937/6b7280?text=Projectx" alt="Projectx" class="w-full h-48 object-cover">
+                    <div class="p-6 flex flex-col flex-grow">
+                        <h3 class="text-2xl font-semibold mb-2 text-gray-400">Projectx</h3>
+                        <p class="text-gray-400 text-sm mb-4 flex-grow">Um projeto inicial explorando estilização com CSS.</p>
+                        <div class="mb-4">
+                            <span class="inline-block bg-gray-700 text-gray-300 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded-full">CSS</span>
+                        </div>
+                        <a href="https://github.com/neuxxkk/Projectx" target="_blank" class="mt-auto self-start text-gray-500 hover:text-gray-400 font-semibold transition duration-300 group">
+                            Ver no GitHub <i class="fas fa-arrow-right ml-1 transform group-hover:translate-x-1 transition-transform"></i>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="py-20 bg-gray-800">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-12 techno-gradient">Habilidades</h2>
+            <div class="max-w-4xl mx-auto">
+                <div class="mb-8">
+                    <h3 class="text-2xl font-semibold text-blue-400 mb-4">Linguagens & Frameworks</h3>
+                    <div class="flex flex-wrap gap-3">
+                        <span class="skill-tag bg-gray-700 text-gray-300 py-2 px-4 rounded-lg cursor-default">Python</span>
+                        <span class="skill-tag bg-gray-700 text-gray-300 py-2 px-4 rounded-lg cursor-default">C++</span>
+                        <span class="skill-tag bg-gray-700 text-gray-300 py-2 px-4 rounded-lg cursor-default">JavaScript</span>
+                        <span class="skill-tag bg-gray-700 text-gray-300 py-2 px-4 rounded-lg cursor-default">HTML</span>
+                        <span class="skill-tag bg-gray-700 text-gray-300 py-2 px-4 rounded-lg cursor-default">CSS</span>
+                        <span class="skill-tag bg-gray-700 text-gray-300 py-2 px-4 rounded-lg cursor-default">Java (Processing)</span>
+                        <span class="skill-tag bg-gray-700 text-gray-300 py-2 px-4 rounded-lg cursor-default">SQL (Básico)</span>
+                        </div>
+                </div>
+                <div class="mb-8">
+                    <h3 class="text-2xl font-semibold text-blue-400 mb-4">Hardware & IoT</h3>
+                    <div class="flex flex-wrap gap-3">
+                        <span class="skill-tag bg-gray-700 text-gray-300 py-2 px-4 rounded-lg cursor-default">ESP32</span>
+                        <span class="skill-tag bg-gray-700 text-gray-300 py-2 px-4 rounded-lg cursor-default">Arduino</span>
+                        <span class="skill-tag bg-gray-700 text-gray-300 py-2 px-4 rounded-lg cursor-default">Sensores e Atuadores</span>
+                        <span class="skill-tag bg-gray-700 text-gray-300 py-2 px-4 rounded-lg cursor-default">LoRa</span>
+                        <span class="skill-tag bg-gray-700 text-gray-300 py-2 px-4 rounded-lg cursor-default">Prototipagem</span>
+                        </div>
+                </div>
+                <div>
+                    <h3 class="text-2xl font-semibold text-blue-400 mb-4">Outras Habilidades</h3>
+                    <div class="flex flex-wrap gap-3">
+                        <span class="skill-tag bg-gray-700 text-gray-300 py-2 px-4 rounded-lg cursor-default">Análise de Sistemas</span>
+                        <span class="skill-tag bg-gray-700 text-gray-300 py-2 px-4 rounded-lg cursor-default">Resolução de Problemas</span>
+                        <span class="skill-tag bg-gray-700 text-gray-300 py-2 px-4 rounded-lg cursor-default">Git & GitHub</span>
+                        <span class="skill-tag bg-gray-700 text-gray-300 py-2 px-4 rounded-lg cursor-default">Algoritmos e Estruturas de Dados</span>
+                        <span class="skill-tag bg-gray-700 text-gray-300 py-2 px-4 rounded-lg cursor-default">Trabalho em Equipe</span>
+                        </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-20">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-4xl font-bold mb-8 techno-gradient">Entre em Contato</h2>
+            <p class="text-lg text-gray-300 mb-8 max-w-xl mx-auto">
+                Estou aberto a novas oportunidades e colaborações. Sinta-se à vontade para entrar em contato!
+            </p>
+            <a href="mailto:seuemail@example.com" class="inline-block bg-purple-600 hover:bg-purple-700 text-white font-semibold py-3 px-8 rounded-lg text-lg transition duration-300 shadow-lg hover:shadow-purple-500/50 transform hover:scale-105 mb-6">
+                <i class="fas fa-envelope mr-2"></i> Enviar E-mail
+            </a>
+            <div class="flex justify-center space-x-6 mt-6">
+                <a href="https://github.com/neuxxkk" target="_blank" class="text-gray-400 hover:text-blue-500 transition duration-300 text-3xl">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="#" target="_blank" class="text-gray-400 hover:text-blue-500 transition duration-300 text-3xl">
+                    <i class="fab fa-linkedin"></i> </a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-gray-900 py-8 text-center">
+        <p class="text-gray-500">&copy; <span id="currentYear"></span> Seu Nome. Todos os direitos reservados.</p>
+    </footer>
+
+    <script>
+        // Smooth scroll for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Set current year in footer
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+    </script>
+
+</body>
+</html>
