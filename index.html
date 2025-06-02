@@ -9,6 +9,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
+        html, body {
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            /* overflow-x: hidden; /* Add this if you suspect horizontal overflow is causing issues, but be cautious as it can hide content */
+        }
         body {
             font-family: 'Inter', sans-serif;
             background-color: #111827; /* bg-gray-900 */
@@ -70,6 +76,7 @@
         }
     </style>
 </head>
+
 <body class="antialiased">
 
     <header class="bg-gray-900/80 backdrop-blur-md sticky top-0 z-50 shadow-lg">
@@ -99,22 +106,24 @@
     </section>
 
     <section id="about" class="py-20 bg-gray-800">
-        <div class="container mx-auto px-6">
-            <h2 class="text-4xl font-bold text-center mb-12 techno-gradient">Sobre Mim</h2>
-            <div class="max-w-3xl mx-auto bg-gray-900 p-8 rounded-xl shadow-2xl">
-                <p class="text-lg text-gray-300 leading-relaxed mb-4">
-                    Sou um estudante dedicado de Desenvolvimento de Sistemas no Colégio Técnico da UFMG (COLTEC). Minha paixão reside na análise e desenvolvimento de soluções tecnológicas, buscando sempre aprender e aplicar meus conhecimentos para resolver problemas complexos e criar projetos inovadores.
-                </p>
-                <p class="text-lg text-gray-300 leading-relaxed mb-4">
-                    Tenho experiência prática no desenvolvimento de hardware e software, com foco em sistemas embarcados, IoT e desenvolvimento web. Gosto de explorar novas tecnologias e metodologias para aprimorar minhas habilidades e contribuir de forma significativa em desafios diários.
-                </p>
-                <p class="text-lg text-gray-300 leading-relaxed">
-                    Estou sempre em busca de oportunidades para expandir minha experiência, colaborar em projetos desafiadores e fazer a diferença através da tecnologia.
-                </p>
-            </div>
-        </div>
-    </section>
-
+<div class="container mx-auto px-6">
+<h2 class="text-4xl font-bold text-center mb-12 techno-gradient">Sobre Mim</h2>
+<div class="max-w-3xl mx-auto bg-gray-900 p-8 rounded-xl shadow-2xl">
+<p class="text-lg text-gray-300 leading-relaxed mb-4">
+Sou um estudante dedicado de Desenvolvimento de Sistemas no Colégio Técnico da UFMG (<a href="https://www.coltec.ufmg.br"> COLTEC </a>). Minha paixão reside na análise e desenvolvimento de soluções tecnológicas, buscando sempre aprender e aplicar meus conhecimentos para resolver problemas complexos e criar projetos inovadores.
+</p>
+<p class="text-lg text-gray-300 leading-relaxed mb-4">
+Tenho experiência prática no desenvolvimento de hardware e software, com foco em sistemas embarcados, IoT e desenvolvimento web. Gosto de explorar novas tecnologias e metodologias para aprimorar minhas habilidades e contribuir de forma significativa em desafios diários.
+</p>
+<p class="text-lg text-gray-300 leading-relaxed mb-4">
+Atualmente, sou membro da <a href="https://kongware.wuaze.com/" target="_blank" class="text-blue-500 hover:text-blue-400 transition duration-300">Kongware</a>, uma célula de inovação e desenvolvimento de software onde colaboro em projetos desafiadores e aprimoro minhas habilidades em um ambiente dinâmico e colaborativo. Nossa equipe está sempre buscando criar soluções impactantes e de alta qualidade. Você pode conferir alguns de nossos projetos no <a href="https://github.com/Kongware" target="_blank" class="text-purple-500 hover:text-purple-400 transition duration-300">GitHub da Kongware</a>.
+</p>
+<p class="text-lg text-gray-300 leading-relaxed">
+Estou sempre em busca de oportunidades para expandir minha experiência, colaborar em projetos desafiadores e fazer a diferença através da tecnologia.
+</p>
+</div>
+</div>
+</section>
     <section id="projects" class="py-20">
         <div class="container mx-auto px-6">
             <h2 class="text-4xl font-bold text-center mb-16 techno-gradient">Meus Projetos</h2>
