@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>vitornms</title>
+    <title>Vitor Neuenschwander | Desenvolvedor</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="shortcut icon" href="v_logo.png" type="image/png">
+    <link rel="shortcut icon" href="https://placehold.co/32x32/3B82F6/FFFFFF?text=VN" type="image/png"> <!-- Placeholder favicon -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
@@ -13,9 +13,6 @@
             width: 100%;
             margin: 0;
             padding: 0;
-            /* overflow-x: hidden; /* Add this if you suspect horizontal overflow is causing issues, but be cautious as it can hide content */
-        }
-        body {
             font-family: 'Inter', sans-serif;
             background-color: #111827; /* bg-gray-900 */
             color: #F3F4F6; /* text-gray-100 */
@@ -39,7 +36,7 @@
             background-color: #3B82F6; /* blue-500 */
             color: white;
         }
-        /* Custom scrollbar for a more modern look */
+        /* Custom scrollbar */
         ::-webkit-scrollbar {
             width: 8px;
         }
@@ -53,11 +50,12 @@
         ::-webkit-scrollbar-thumb:hover {
             background: #2563EB; /* blue-600 */
         }
-        nav a {
+        /* Desktop Nav Link Hover Effect */
+        header nav a:not(.techno-gradient) { /* Exclude logo from this specific hover */
             position: relative;
             transition: color 0.3s ease;
         }
-        nav a::after {
+        header nav a:not(.techno-gradient)::after {
             content: '';
             position: absolute;
             width: 0;
@@ -68,293 +66,355 @@
             background-color: #8B5CF6; /* purple-500 */
             transition: width 0.3s ease;
         }
-        nav a:hover::after {
+        header nav a:not(.techno-gradient):hover::after {
             width: 100%;
         }
-        nav a:hover {
+        header nav a:not(.techno-gradient):hover {
             color: #A5B4FC; /* indigo-300 */
+        }
+        /* Ensure hero image covers the area and text is readable */
+        #hero {
+            background-size: cover;
+            background-position: center;
         }
     </style>
 </head>
 
 <body class="antialiased">
 
+    <!-- Header -->
     <header class="bg-gray-900/80 backdrop-blur-md sticky top-0 z-50 shadow-lg">
-        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+        <nav class="container mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
             <a href="#" class="text-2xl font-bold techno-gradient">Vitor Neuenschwander</a>
-            <div class="space-x-4 md:space-x-6 text-gray-300">
-                <a href="#about" class="hover:text-blue-400">Sobre</a>
-                <a href="#projects" class="hover:text-blue-400">Projetos</a>
-                <a href="#skills" class="hover:text-blue-400">Habilidades</a>
-                <a href="#contact" class="hover:text-blue-400">Contato</a>
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex space-x-6 text-gray-300">
+                <a href="#about">Sobre</a>
+                <a href="#projects">Projetos</a>
+                <a href="#skills">Habilidades</a>
+                <a href="#contact">Contato</a>
+            </div>
+            <!-- Mobile Menu Button -->
+            <div class="md:hidden">
+                <button id="mobile-menu-button" class="text-gray-300 hover:text-white focus:outline-none" aria-label="Abrir menu">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
             </div>
         </nav>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-gray-900/95 backdrop-blur-sm">
+            <a href="#about" class="block py-3 px-4 text-sm text-gray-200 hover:bg-gray-700 transition duration-150">Sobre</a>
+            <a href="#projects" class="block py-3 px-4 text-sm text-gray-200 hover:bg-gray-700 transition duration-150">Projetos</a>
+            <a href="#skills" class="block py-3 px-4 text-sm text-gray-200 hover:bg-gray-700 transition duration-150">Habilidades</a>
+            <a href="#contact" class="block py-3 px-4 text-sm text-gray-200 hover:bg-gray-700 transition duration-150">Contato</a>
+        </div>
     </header>
 
-    <section id="hero" class="min-h-screen flex items-center justify-center bg-cover bg-center" style="background-image: linear-gradient(rgba(17, 24, 39, 0.8), rgba(17, 24, 39, 0.9)), url('https://placehold.co/1920x1080/1a202c/3b82f6?text=@vitornms');">
-        <div class="text-center p-6">
-            <h1 class="text-5xl md:text-7xl font-extrabold mb-4">
+    <!-- Hero Section -->
+    <section id="hero" class="min-h-screen flex items-center justify-center" style="background-image: linear-gradient(rgba(17, 24, 39, 0.85), rgba(17, 24, 39, 0.95)), url('https://placehold.co/1920x1080/1a202c/3b82f6?text=Soluções+Inovadoras');">
+        <div class="text-center p-6 max-w-4xl mx-auto">
+            <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold mb-4">
                 Olá, eu sou <span class="techno-gradient">Vitor Neuenschwander</span>
             </h1>
-            <p class="text-xl md:text-2xl text-gray-300 mb-8 max-w-2xl mx-auto">
+            <p class="text-lg sm:text-xl md:text-2xl text-gray-300 mb-8 max-w-2xl mx-auto">
                 Técnico em Desenvolvimento de Sistemas, transformando ideias em soluções de software e hardware inovadoras.
             </p>
-            <a href="#projects" class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-8 rounded-lg text-lg transition duration-300 shadow-lg hover:shadow-blue-500/50 transform hover:scale-105">
+            <a href="#projects" class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 sm:px-8 rounded-lg text-md sm:text-lg transition duration-300 shadow-lg hover:shadow-blue-500/50 transform hover:scale-105">
                 Ver Meus Projetos
             </a>
         </div>
     </section>
 
-    <section id="about" class="py-20 bg-gray-800">
-<div class="container mx-auto px-6">
-<h2 class="text-4xl font-bold text-center mb-12 techno-gradient">Sobre Mim</h2>
-<div class="max-w-3xl mx-auto bg-gray-900 p-8 rounded-xl shadow-2xl">
-<p class="text-lg text-gray-300 leading-relaxed mb-4">
-Sou um estudante dedicado de Desenvolvimento de Sistemas no Colégio Técnico da UFMG (<a href="https://www.coltec.ufmg.br"> COLTEC </a>). Minha paixão reside na análise e desenvolvimento de soluções tecnológicas, buscando sempre aprender e aplicar meus conhecimentos para resolver problemas complexos e criar projetos inovadores.
-</p>
-<p class="text-lg text-gray-300 leading-relaxed mb-4">
-Tenho experiência prática no desenvolvimento de hardware e software, com foco em sistemas embarcados, IoT e desenvolvimento web. Gosto de explorar novas tecnologias e metodologias para aprimorar minhas habilidades e contribuir de forma significativa em desafios diários.
-</p>
-<p class="text-lg text-gray-300 leading-relaxed mb-4">
-Atualmente, sou membro da <a href="https://kongware.wuaze.com/" target="_blank" class="text-blue-500 hover:text-blue-400 transition duration-300">Kongware</a>, uma célula de inovação e desenvolvimento de software onde colaboro em projetos desafiadores e aprimoro minhas habilidades em um ambiente dinâmico e colaborativo. Nossa equipe está sempre buscando criar soluções impactantes e de alta qualidade. Você pode conferir alguns de nossos projetos no <a href="https://github.com/Kongware" target="_blank" class="text-purple-500 hover:text-purple-400 transition duration-300">GitHub da Kongware</a>.
-</p>
-<p class="text-lg text-gray-300 leading-relaxed">
-Estou sempre em busca de oportunidades para expandir minha experiência, colaborar em projetos desafiadores e fazer a diferença através da tecnologia.
-</p>
-</div>
-</div>
-</section>
-    <section id="projects" class="py-20">
-        <div class="container mx-auto px-6">
-            <h2 class="text-4xl font-bold text-center mb-16 techno-gradient">Meus Projetos</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+    <!-- About Section -->
+    <section id="about" class="py-16 md:py-20 bg-gray-800">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl sm:text-4xl font-bold text-center mb-12 md:mb-16 techno-gradient">Sobre Mim</h2>
+            <div class="max-w-3xl mx-auto bg-gray-900 p-6 sm:p-8 rounded-xl shadow-2xl">
+                <p class="text-md sm:text-lg text-gray-300 leading-relaxed mb-4">
+                    Sou um estudante dedicado de Desenvolvimento de Sistemas no Colégio Técnico da UFMG (<a href="https://www.coltec.ufmg.br" target="_blank" rel="noopener noreferrer" class="text-blue-400 hover:text-blue-300 transition duration-300 underline">COLTEC</a>). Minha paixão reside na análise e desenvolvimento de soluções tecnológicas, buscando sempre aprender e aplicar meus conhecimentos para resolver problemas complexos e criar projetos inovadores.
+                </p>
+                <p class="text-md sm:text-lg text-gray-300 leading-relaxed mb-4">
+                    Tenho experiência prática no desenvolvimento de hardware e software, com foco em sistemas embarcados, IoT e desenvolvimento web. Gosto de explorar novas tecnologias e metodologias para aprimorar minhas habilidades e contribuir de forma significativa em desafios diários.
+                </p>
+                <p class="text-md sm:text-lg text-gray-300 leading-relaxed mb-4">
+                    Atualmente, sou membro da <a href="https://kongware.wuaze.com/" target="_blank" rel="noopener noreferrer" class="text-blue-400 hover:text-blue-300 transition duration-300 underline">Kongware</a>, uma célula de inovação e desenvolvimento de software onde colaboro em projetos desafiadores e aprimoro minhas habilidades em um ambiente dinâmico e colaborativo. Nossa equipe está sempre buscando criar soluções impactantes e de alta qualidade. Você pode conferir alguns de nossos projetos no <a href="https://github.com/Kongware" target="_blank" rel="noopener noreferrer" class="text-purple-400 hover:text-purple-300 transition duration-300 underline">GitHub da Kongware</a>.
+                </p>
+                <p class="text-md sm:text-lg text-gray-300 leading-relaxed">
+                    Estou sempre em busca de oportunidades para expandir minha experiência, colaborar em projetos desafiadores e fazer a diferença através da tecnologia.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-16 md:py-20">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl sm:text-4xl font-bold text-center mb-12 md:mb-16 techno-gradient">Meus Projetos</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10">
+                <!-- Project Card 1 -->
                 <div class="project-card bg-gray-800 rounded-xl shadow-xl overflow-hidden flex flex-col">
-                    <img src="https://placehold.co/600x400/1f2937/3b82f6?text=IoT+Projects" alt="IoT Projects" class="w-full h-48 object-cover">
+                    <img src="https://placehold.co/600x400/1f2937/3b82f6?text=IoT+Projects" alt="Projetos IoT" class="w-full h-48 object-cover">
                     <div class="p-6 flex flex-col flex-grow">
-                        <h3 class="text-2xl font-semibold mb-2 text-blue-400">IoT-projects</h3>
+                        <h3 class="text-xl sm:text-2xl font-semibold mb-2 text-blue-400">IoT-projects</h3>
                         <p class="text-gray-400 text-sm mb-4 flex-grow">Projetos pessoais e profissionais na área de Internet das Coisas (IoT), explorando a integração de hardware e software.</p>
                         <div class="mb-4">
-                            <span class="inline-block bg-gray-700 text-gray-300 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded-full">C++</span>
-                            <span class="inline-block bg-gray-700 text-gray-300 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded-full">Hardware</span>
+                            <span class="inline-block bg-gray-700 text-gray-300 text-xs font-semibold mr-2 mb-2 px-2.5 py-0.5 rounded-full">C++</span>
+                            <span class="inline-block bg-gray-700 text-gray-300 text-xs font-semibold mr-2 mb-2 px-2.5 py-0.5 rounded-full">Hardware</span>
                         </div>
-                        <a href="https://github.com/neuxxkk/IoT-projects" target="_blank" class="mt-auto self-start text-blue-500 hover:text-blue-400 font-semibold transition duration-300 group">
+                        <a href="https://github.com/neuxxkk/IoT-projects" target="_blank" rel="noopener noreferrer" class="mt-auto self-start text-blue-500 hover:text-blue-400 font-semibold transition duration-300 group">
                             Ver no GitHub <i class="fas fa-arrow-right ml-1 transform group-hover:translate-x-1 transition-transform"></i>
                         </a>
                     </div>
                 </div>
-
+                <!-- Project Card 2 -->
                 <div class="project-card bg-gray-800 rounded-xl shadow-xl overflow-hidden flex flex-col">
-                    <img src="https://placehold.co/600x400/1f2937/eab308?text=Pomodoro+Timer" alt="Pomodoro Timer" class="w-full h-48 object-cover">
+                    <img src="https://placehold.co/600x400/1f2937/eab308?text=Pomodoro+Timer" alt="Temporizador Pomodoro" class="w-full h-48 object-cover">
                     <div class="p-6 flex flex-col flex-grow">
-                        <h3 class="text-2xl font-semibold mb-2 text-yellow-400">Pomodoro Timer</h3>
+                        <h3 class="text-xl sm:text-2xl font-semibold mb-2 text-yellow-400">Pomodoro Timer</h3>
                         <p class="text-gray-400 text-sm mb-4 flex-grow">Um temporizador Pomodoro desenvolvido para auxiliar na organização e foco durante os estudos e trabalho.</p>
                         <div class="mb-4">
-                            <span class="inline-block bg-gray-700 text-gray-300 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded-full">JavaScript</span>
-                            <span class="inline-block bg-gray-700 text-gray-300 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded-full">HTML</span>
-                            <span class="inline-block bg-gray-700 text-gray-300 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded-full">CSS</span>
+                            <span class="inline-block bg-gray-700 text-gray-300 text-xs font-semibold mr-2 mb-2 px-2.5 py-0.5 rounded-full">JavaScript</span>
+                            <span class="inline-block bg-gray-700 text-gray-300 text-xs font-semibold mr-2 mb-2 px-2.5 py-0.5 rounded-full">HTML</span>
+                            <span class="inline-block bg-gray-700 text-gray-300 text-xs font-semibold mr-2 mb-2 px-2.5 py-0.5 rounded-full">CSS</span>
                         </div>
-                        <a href="https://github.com/neuxxkk/pomodoro" target="_blank" class="mt-auto self-start text-yellow-500 hover:text-yellow-400 font-semibold transition duration-300 group">
+                        <a href="https://github.com/neuxxkk/pomodoro" target="_blank" rel="noopener noreferrer" class="self-start text-yellow-500 hover:text-yellow-400 font-semibold transition duration-300 group mb-2">
                             Ver no GitHub <i class="fas fa-arrow-right ml-1 transform group-hover:translate-x-1 transition-transform"></i>
                         </a>
-                        <a href="https://neuxxkk.github.io/pomodoro/" target="_blank" class="mt-auto self-start text-yellow-100 hover:text-yellow-200 font-semibold transition duration-300 group">
-                            Ver Web Page <i class="fas fa-arrow-right ml-1 transform group-hover:translate-x-1 transition-transform"></i>
+                        <a href="https://neuxxkk.github.io/pomodoro/" target="_blank" rel="noopener noreferrer" class="self-start text-yellow-300 hover:text-yellow-200 font-semibold transition duration-300 group">
+                            Ver Web Page <i class="fas fa-external-link-alt ml-1 transform group-hover:scale-110 transition-transform"></i>
                         </a>
                     </div>
                 </div>
-
-                <div class="project-card bg-gray-800 rounded-xl shadow-xl overflow-hidden flex flex-col">
+                <!-- Project Card 3 -->
+                 <div class="project-card bg-gray-800 rounded-xl shadow-xl overflow-hidden flex flex-col">
                     <img src="https://placehold.co/600x400/1f2937/f472b6?text=Projeto+WebSite" alt="Projeto WebSite" class="w-full h-48 object-cover">
                     <div class="p-6 flex flex-col flex-grow">
-                        <h3 class="text-2xl font-semibold mb-2 text-pink-400">Projeto-WebSite</h3>
+                        <h3 class="text-xl sm:text-2xl font-semibold mb-2 text-pink-400">Projeto-WebSite</h3>
                         <p class="text-gray-400 text-sm mb-4 flex-grow">Desenvolvimento de um website explorando conceitos fundamentais de HTML e estrutura web.</p>
                         <div class="mb-4">
-                            <span class="inline-block bg-gray-700 text-gray-300 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded-full">HTML</span>
-                            <span class="inline-block bg-gray-700 text-gray-300 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded-full">CSS</span>
+                            <span class="inline-block bg-gray-700 text-gray-300 text-xs font-semibold mr-2 mb-2 px-2.5 py-0.5 rounded-full">HTML</span>
+                            <span class="inline-block bg-gray-700 text-gray-300 text-xs font-semibold mr-2 mb-2 px-2.5 py-0.5 rounded-full">CSS</span>
                         </div>
-                        <a href="https://github.com/neuxxkk/Projeto-WebSite" target="_blank" class="mt-auto self-start text-pink-500 hover:text-pink-400 font-semibold transition duration-300 group">
+                        <a href="https://github.com/neuxxkk/Projeto-WebSite" target="_blank" rel="noopener noreferrer" class="self-start text-pink-500 hover:text-pink-400 font-semibold transition duration-300 group mb-2">
                             Ver no GitHub <i class="fas fa-arrow-right ml-1 transform group-hover:translate-x-1 transition-transform"></i>
                         </a>
-                        <a href="https://neuxxkk.github.io/Projeto-WebSite" target="_blank" class="mt-auto self-start text-pink-100 hover:text-pink-200 font-semibold transition duration-300 group">
-                            Ver Web Page <i class="fas fa-arrow-right ml-1 transform group-hover:translate-x-1 transition-transform"></i>
+                        <a href="https://neuxxkk.github.io/Projeto-WebSite" target="_blank" rel="noopener noreferrer" class="self-start text-pink-300 hover:text-pink-200 font-semibold transition duration-300 group">
+                           Ver Web Page <i class="fas fa-external-link-alt ml-1 transform group-hover:scale-110 transition-transform"></i>
                         </a>
                     </div>
                 </div>
-
+                <!-- Project Card 4 -->
                 <div class="project-card bg-gray-800 rounded-xl shadow-xl overflow-hidden flex flex-col">
-                    <img src="https://placehold.co/600x400/1f2937/22c55e?text=Neural+Network" alt="Neural Network" class="w-full h-48 object-cover">
+                    <img src="https://placehold.co/600x400/1f2937/22c55e?text=Neural+Network" alt="Rede Neural" class="w-full h-48 object-cover">
                     <div class="p-6 flex flex-col flex-grow">
-                        <h3 class="text-2xl font-semibold mb-2 text-green-400">Neural-Network</h3>
+                        <h3 class="text-xl sm:text-2xl font-semibold mb-2 text-green-400">Neural-Network</h3>
                         <p class="text-gray-400 text-sm mb-4 flex-grow">Implementação de uma rede neural utilizando Python, baseada no método de Tariq Rashid.</p>
                         <div class="mb-4">
-                            <span class="inline-block bg-gray-700 text-gray-300 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded-full">Python</span>
-                            <span class="inline-block bg-gray-700 text-gray-300 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded-full">IA</span>
+                            <span class="inline-block bg-gray-700 text-gray-300 text-xs font-semibold mr-2 mb-2 px-2.5 py-0.5 rounded-full">Python</span>
+                            <span class="inline-block bg-gray-700 text-gray-300 text-xs font-semibold mr-2 mb-2 px-2.5 py-0.5 rounded-full">IA</span>
                         </div>
-                        <a href="https://github.com/neuxxkk/Neural-Network" target="_blank" class="mt-auto self-start text-green-500 hover:text-green-400 font-semibold transition duration-300 group">
+                        <a href="https://github.com/neuxxkk/Neural-Network" target="_blank" rel="noopener noreferrer" class="mt-auto self-start text-green-500 hover:text-green-400 font-semibold transition duration-300 group">
                             Ver no GitHub <i class="fas fa-arrow-right ml-1 transform group-hover:translate-x-1 transition-transform"></i>
                         </a>
                     </div>
                 </div>
-                
+                <!-- Project Card 5 -->
                 <div class="project-card bg-gray-800 rounded-xl shadow-xl overflow-hidden flex flex-col">
                     <img src="https://placehold.co/600x400/1f2937/8b5cf6?text=Pong+AI" alt="Pong AI" class="w-full h-48 object-cover">
                     <div class="p-6 flex flex-col flex-grow">
-                        <h3 class="text-2xl font-semibold mb-2 text-purple-400">PongIA</h3>
+                        <h3 class="text-xl sm:text-2xl font-semibold mb-2 text-purple-400">PongIA</h3>
                         <p class="text-gray-400 text-sm mb-4 flex-grow">Um jogador de Pong com Inteligência Artificial desenvolvido em Java utilizando a biblioteca Processing.</p>
                         <div class="mb-4">
-                            <span class="inline-block bg-gray-700 text-gray-300 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded-full">Processing</span>
-                            <span class="inline-block bg-gray-700 text-gray-300 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded-full">Java</span>
-                            <span class="inline-block bg-gray-700 text-gray-300 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded-full">IA</span>
+                            <span class="inline-block bg-gray-700 text-gray-300 text-xs font-semibold mr-2 mb-2 px-2.5 py-0.5 rounded-full">Processing</span>
+                            <span class="inline-block bg-gray-700 text-gray-300 text-xs font-semibold mr-2 mb-2 px-2.5 py-0.5 rounded-full">Java</span>
+                            <span class="inline-block bg-gray-700 text-gray-300 text-xs font-semibold mr-2 mb-2 px-2.5 py-0.5 rounded-full">IA</span>
                         </div>
-                        <a href="https://github.com/neuxxkk/PongIA" target="_blank" class="mt-auto self-start text-purple-500 hover:text-purple-400 font-semibold transition duration-300 group">
+                        <a href="https://github.com/neuxxkk/PongIA" target="_blank" rel="noopener noreferrer" class="mt-auto self-start text-purple-500 hover:text-purple-400 font-semibold transition duration-300 group">
                             Ver no GitHub <i class="fas fa-arrow-right ml-1 transform group-hover:translate-x-1 transition-transform"></i>
                         </a>
                     </div>
                 </div>
-
+                <!-- Project Card 6 -->
                 <div class="project-card bg-gray-800 rounded-xl shadow-xl overflow-hidden flex flex-col">
-                    <img src="https://placehold.co/600x400/1f2937/ec4899?text=Graph+Algorithms" alt="Graph Algorithms" class="w-full h-48 object-cover">
+                    <img src="https://placehold.co/600x400/1f2937/ec4899?text=Graph+Algorithms" alt="Algoritmos em Grafos" class="w-full h-48 object-cover">
                     <div class="p-6 flex flex-col flex-grow">
-                        <h3 class="text-2xl font-semibold mb-2 text-pink-500">Graph-Algorithms</h3>
+                        <h3 class="text-xl sm:text-2xl font-semibold mb-2 text-pink-500">Graph-Algorithms</h3>
                         <p class="text-gray-400 text-sm mb-4 flex-grow">Implementação de algoritmos de busca e inserção em grafos binários/não-binários, direcionados e não-direcionados.</p>
                         <div class="mb-4">
-                            <span class="inline-block bg-gray-700 text-gray-300 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded-full">Python</span>
-                            <span class="inline-block bg-gray-700 text-gray-300 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded-full">Algoritmos</span>
+                            <span class="inline-block bg-gray-700 text-gray-300 text-xs font-semibold mr-2 mb-2 px-2.5 py-0.5 rounded-full">Python</span>
+                            <span class="inline-block bg-gray-700 text-gray-300 text-xs font-semibold mr-2 mb-2 px-2.5 py-0.5 rounded-full">Algoritmos</span>
                         </div>
-                        <a href="https://github.com/neuxxkk/Graph-Algorithms" target="_blank" class="mt-auto self-start text-pink-600 hover:text-pink-500 font-semibold transition duration-300 group">
+                        <a href="https://github.com/neuxxkk/Graph-Algorithms" target="_blank" rel="noopener noreferrer" class="mt-auto self-start text-pink-600 hover:text-pink-500 font-semibold transition duration-300 group">
                             Ver no GitHub <i class="fas fa-arrow-right ml-1 transform group-hover:translate-x-1 transition-transform"></i>
                         </a>
                     </div>
                 </div>
-
+                 <!-- Project Card 7 (OBI) -->
                 <div class="project-card bg-gray-800 rounded-xl shadow-xl overflow-hidden flex flex-col">
-                    <img src="https://placehold.co/600x400/1f2937/06b6d4?text=OBI+Training" alt="OBI Training" class="w-full h-48 object-cover">
+                    <img src="https://placehold.co/600x400/1f2937/06b6d4?text=OBI+Training" alt="Treinamento OBI" class="w-full h-48 object-cover">
                     <div class="p-6 flex flex-col flex-grow">
-                        <h3 class="text-2xl font-semibold mb-2 text-cyan-400">OBI</h3>
+                        <h3 class="text-xl sm:text-2xl font-semibold mb-2 text-cyan-400">OBI</h3>
                         <p class="text-gray-400 text-sm mb-4 flex-grow">Códigos e estudos para treinamento da Olimpíada Brasileira de Informática (OBI).</p>
                         <div class="mb-4">
-                            <span class="inline-block bg-gray-700 text-gray-300 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded-full">Python</span>
-                            <span class="inline-block bg-gray-700 text-gray-300 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded-full">Programação Competitiva</span>
+                            <span class="inline-block bg-gray-700 text-gray-300 text-xs font-semibold mr-2 mb-2 px-2.5 py-0.5 rounded-full">Python</span>
+                            <span class="inline-block bg-gray-700 text-gray-300 text-xs font-semibold mr-2 mb-2 px-2.5 py-0.5 rounded-full">Programação Competitiva</span>
                         </div>
-                        <a href="https://github.com/neuxxkk/OBI" target="_blank" class="mt-auto self-start text-cyan-500 hover:text-cyan-400 font-semibold transition duration-300 group">
+                        <a href="https://github.com/neuxxkk/OBI" target="_blank" rel="noopener noreferrer" class="mt-auto self-start text-cyan-500 hover:text-cyan-400 font-semibold transition duration-300 group">
                             Ver no GitHub <i class="fas fa-arrow-right ml-1 transform group-hover:translate-x-1 transition-transform"></i>
                         </a>
                     </div>
                 </div>
-                
+                <!-- Project Card 8 (Projectx) -->
                 <div class="project-card bg-gray-800 rounded-xl shadow-xl overflow-hidden flex flex-col">
-                    <img src="https://placehold.co/600x400/1f2937/6b7280?text=Projectx" alt="Projectx" class="w-full h-48 object-cover">
+                    <img src="https://placehold.co/600x400/1f2937/6b7280?text=Projectx" alt="Projectx CSS" class="w-full h-48 object-cover">
                     <div class="p-6 flex flex-col flex-grow">
-                        <h3 class="text-2xl font-semibold mb-2 text-gray-400">Projectx</h3>
+                        <h3 class="text-xl sm:text-2xl font-semibold mb-2 text-gray-400">Projectx</h3>
                         <p class="text-gray-400 text-sm mb-4 flex-grow">Um projeto inicial explorando estilização com CSS.</p>
                         <div class="mb-4">
-                            <span class="inline-block bg-gray-700 text-gray-300 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded-full">CSS</span>
+                            <span class="inline-block bg-gray-700 text-gray-300 text-xs font-semibold mr-2 mb-2 px-2.5 py-0.5 rounded-full">CSS</span>
                         </div>
-                        <a href="https://github.com/neuxxkk/Projectx" target="_blank" class="mt-auto self-start text-gray-500 hover:text-gray-400 font-semibold transition duration-300 group">
+                        <a href="https://github.com/neuxxkk/Projectx" target="_blank" rel="noopener noreferrer" class="self-start text-gray-500 hover:text-gray-400 font-semibold transition duration-300 group mb-2">
                             Ver no GitHub <i class="fas fa-arrow-right ml-1 transform group-hover:translate-x-1 transition-transform"></i>
                         </a>
-                        <a href="https://neuxxkk.github.io/Projectx" target="_blank" class="mt-auto self-start text-gray-300 hover:text-gray-100 font-semibold transition duration-300 group">
-                            Ver Web Page <i class="fas fa-arrow-right ml-1 transform group-hover:translate-x-1 transition-transform"></i>
+                        <a href="https://neuxxkk.github.io/Projectx" target="_blank" rel="noopener noreferrer" class="self-start text-gray-300 hover:text-gray-100 font-semibold transition duration-300 group">
+                           Ver Web Page <i class="fas fa-external-link-alt ml-1 transform group-hover:scale-110 transition-transform"></i>
                         </a>
                     </div>
                 </div>
-
             </div>
         </div>
     </section>
 
-    <section id="skills" class="py-20 bg-gray-800">
-        <div class="container mx-auto px-6">
-            <h2 class="text-4xl font-bold text-center mb-12 techno-gradient">Habilidades</h2>
+    <!-- Skills Section -->
+    <section id="skills" class="py-16 md:py-20 bg-gray-800">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl sm:text-4xl font-bold text-center mb-12 md:mb-16 techno-gradient">Habilidades</h2>
             <div class="max-w-4xl mx-auto">
-                <div class="mb-8">
-                    <h3 class="text-2xl font-semibold text-blue-400 mb-4">Linguagens & Frameworks</h3>
+                <div class="mb-10">
+                    <h3 class="text-xl sm:text-2xl font-semibold text-blue-400 mb-4">Linguagens & Frameworks</h3>
                     <div class="flex flex-wrap gap-3">
-                        <span class="skill-tag bg-gray-700 text-gray-300 py-2 px-4 rounded-lg cursor-default">Python</span>
-                        <span class="skill-tag bg-gray-700 text-gray-300 py-2 px-4 rounded-lg cursor-default">Django</span>
-                        <span class="skill-tag bg-gray-700 text-gray-300 py-2 px-4 rounded-lg cursor-default">C++/C#/C</span>
-                        <span class="skill-tag bg-gray-700 text-gray-300 py-2 px-4 rounded-lg cursor-default">JavaScript</span>
-                        <span class="skill-tag bg-gray-700 text-gray-300 py-2 px-4 rounded-lg cursor-default">HTML</span>
-                        <span class="skill-tag bg-gray-700 text-gray-300 py-2 px-4 rounded-lg cursor-default">CSS</span>
-                        <span class="skill-tag bg-gray-700 text-gray-300 py-2 px-4 rounded-lg cursor-default">Java</span>
-                        <span class="skill-tag bg-gray-700 text-gray-300 py-2 px-4 rounded-lg cursor-default">SQL</span>
-                        <span class="skill-tag bg-gray-700 text-gray-300 py-2 px-4 rounded-lg cursor-default">Bash</span>
-                        </div>
+                        <span class="skill-tag bg-gray-700 text-gray-300 py-2 px-4 rounded-lg cursor-default text-sm sm:text-base">Python</span>
+                        <span class="skill-tag bg-gray-700 text-gray-300 py-2 px-4 rounded-lg cursor-default text-sm sm:text-base">Django</span>
+                        <span class="skill-tag bg-gray-700 text-gray-300 py-2 px-4 rounded-lg cursor-default text-sm sm:text-base">C++/C#/C</span>
+                        <span class="skill-tag bg-gray-700 text-gray-300 py-2 px-4 rounded-lg cursor-default text-sm sm:text-base">JavaScript</span>
+                        <span class="skill-tag bg-gray-700 text-gray-300 py-2 px-4 rounded-lg cursor-default text-sm sm:text-base">HTML</span>
+                        <span class="skill-tag bg-gray-700 text-gray-300 py-2 px-4 rounded-lg cursor-default text-sm sm:text-base">CSS</span>
+                        <span class="skill-tag bg-gray-700 text-gray-300 py-2 px-4 rounded-lg cursor-default text-sm sm:text-base">Java</span>
+                        <span class="skill-tag bg-gray-700 text-gray-300 py-2 px-4 rounded-lg cursor-default text-sm sm:text-base">SQL</span>
+                        <span class="skill-tag bg-gray-700 text-gray-300 py-2 px-4 rounded-lg cursor-default text-sm sm:text-base">Bash</span>
+                    </div>
                 </div>
-                <div class="mb-8">
-                    <h3 class="text-2xl font-semibold text-blue-400 mb-4">Hardware & IoT</h3>
+                <div class="mb-10">
+                    <h3 class="text-xl sm:text-2xl font-semibold text-blue-400 mb-4">Hardware & IoT</h3>
                     <div class="flex flex-wrap gap-3">
-                        <span class="skill-tag bg-gray-700 text-gray-300 py-2 px-4 rounded-lg cursor-default">ESP32</span>
-                        <span class="skill-tag bg-gray-700 text-gray-300 py-2 px-4 rounded-lg cursor-default">Arduino</span>
-                        <span class="skill-tag bg-gray-700 text-gray-300 py-2 px-4 rounded-lg cursor-default">Raspberry Pi</span>
-                        <span class="skill-tag bg-gray-700 text-gray-300 py-2 px-4 rounded-lg cursor-default">Sensores e Atuadores</span>
-                        <span class="skill-tag bg-gray-700 text-gray-300 py-2 px-4 rounded-lg cursor-default">LoRa</span>
-                        <span class="skill-tag bg-gray-700 text-gray-300 py-2 px-4 rounded-lg cursor-default">Prototipagem</span>
-                        <span class="skill-tag bg-gray-700 text-gray-300 py-2 px-4 rounded-lg cursor-default">Modelagem 3D</span>
-                        </div>
+                        <span class="skill-tag bg-gray-700 text-gray-300 py-2 px-4 rounded-lg cursor-default text-sm sm:text-base">ESP32</span>
+                        <span class="skill-tag bg-gray-700 text-gray-300 py-2 px-4 rounded-lg cursor-default text-sm sm:text-base">Arduino</span>
+                        <span class="skill-tag bg-gray-700 text-gray-300 py-2 px-4 rounded-lg cursor-default text-sm sm:text-base">Raspberry Pi</span>
+                        <span class="skill-tag bg-gray-700 text-gray-300 py-2 px-4 rounded-lg cursor-default text-sm sm:text-base">Sensores e Atuadores</span>
+                        <span class="skill-tag bg-gray-700 text-gray-300 py-2 px-4 rounded-lg cursor-default text-sm sm:text-base">LoRa</span>
+                        <span class="skill-tag bg-gray-700 text-gray-300 py-2 px-4 rounded-lg cursor-default text-sm sm:text-base">Prototipagem</span>
+                        <span class="skill-tag bg-gray-700 text-gray-300 py-2 px-4 rounded-lg cursor-default text-sm sm:text-base">Modelagem 3D</span>
+                    </div>
                 </div>
                 <div>
-                    <h3 class="text-2xl font-semibold text-blue-400 mb-4">Outras Habilidades</h3>
+                    <h3 class="text-xl sm:text-2xl font-semibold text-blue-400 mb-4">Outras Habilidades</h3>
                     <div class="flex flex-wrap gap-3">
-                        <span class="skill-tag bg-gray-700 text-gray-300 py-2 px-4 rounded-lg cursor-default">Análise de Sistemas</span>
-                        <span class="skill-tag bg-gray-700 text-gray-300 py-2 px-4 rounded-lg cursor-default">Resolução de Problemas</span>
-                        <span class="skill-tag bg-gray-700 text-gray-300 py-2 px-4 rounded-lg cursor-default">Git & GitHub</span>
-                        <span class="skill-tag bg-gray-700 text-gray-300 py-2 px-4 rounded-lg cursor-default">Algoritmos e Estruturas de Dados</span>
-                        <span class="skill-tag bg-gray-700 text-gray-300 py-2 px-4 rounded-lg cursor-default">Programação Orientada a Objetos</span>
-                        <span class="skill-tag bg-gray-700 text-gray-300 py-2 px-4 rounded-lg cursor-default">Trabalho em Equipe</span>
-                        </div>
+                        <span class="skill-tag bg-gray-700 text-gray-300 py-2 px-4 rounded-lg cursor-default text-sm sm:text-base">Análise de Sistemas</span>
+                        <span class="skill-tag bg-gray-700 text-gray-300 py-2 px-4 rounded-lg cursor-default text-sm sm:text-base">Resolução de Problemas</span>
+                        <span class="skill-tag bg-gray-700 text-gray-300 py-2 px-4 rounded-lg cursor-default text-sm sm:text-base">Git & GitHub</span>
+                        <span class="skill-tag bg-gray-700 text-gray-300 py-2 px-4 rounded-lg cursor-default text-sm sm:text-base">Algoritmos e Estruturas de Dados</span>
+                        <span class="skill-tag bg-gray-700 text-gray-300 py-2 px-4 rounded-lg cursor-default text-sm sm:text-base">Programação Orientada a Objetos</span>
+                        <span class="skill-tag bg-gray-700 text-gray-300 py-2 px-4 rounded-lg cursor-default text-sm sm:text-base">Trabalho em Equipe</span>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="contact" class="py-20">
-        <div class="container mx-auto px-6 text-center">
-            <h2 class="text-4xl font-bold mb-8 techno-gradient">Entre em Contato</h2>
-            <p class="text-lg text-gray-300 mb-8 max-w-xl mx-auto">
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 md:py-20">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl sm:text-4xl font-bold mb-8 md:mb-12 techno-gradient">Entre em Contato</h2>
+            <p class="text-md sm:text-lg text-gray-300 mb-8 md:mb-10 max-w-xl mx-auto">
                 Estou aberto a novas oportunidades e colaborações. Sinta-se à vontade para entrar em contato!
             </p>
-            <div class="flex flex-col sm:flex-row sm:justify-center sm:space-x-4 space-y-4 sm:space-y-0 items-center mt-8">
+            <div class="flex flex-col sm:flex-row sm:justify-center gap-4 items-center">
                 <a href="mailto:vitornms@gmail.com"
-                class="inline-flex items-center justify-center w-full sm:w-auto bg-sky-600 hover:bg-sky-700 text-white font-semibold py-3 px-6 rounded-lg text-base md:text-lg transition duration-300 ease-in-out shadow-md hover:shadow-sky-500/40 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:ring-opacity-50">
+                   class="inline-flex items-center justify-center w-full sm:w-auto bg-sky-600 hover:bg-sky-700 text-white font-semibold py-3 px-6 rounded-lg text-base transition duration-300 ease-in-out shadow-md hover:shadow-sky-500/40 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:ring-opacity-50">
                     <i class="fas fa-envelope mr-2.5"></i> Enviar E-mail
                 </a>
-
-                <a href="https://wa.me/5531984152360" target="_blank"
-                rel="noopener noreferrer"
-                class="inline-flex items-center justify-center w-full sm:w-auto bg-green-500 hover:bg-green-600 text-white font-semibold py-3 px-6 rounded-lg text-base md:text-lg transition duration-300 ease-in-out shadow-md hover:shadow-green-500/40 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-opacity-50">
+                <a href="https://wa.me/5531984152360" target="_blank" rel="noopener noreferrer"
+                   class="inline-flex items-center justify-center w-full sm:w-auto bg-green-500 hover:bg-green-600 text-white font-semibold py-3 px-6 rounded-lg text-base transition duration-300 ease-in-out shadow-md hover:shadow-green-500/40 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-opacity-50">
                     <i class="fab fa-whatsapp mr-2.5"></i> Enviar WhatsApp
                 </a>
             </div>
-            <div class="flex justify-center space-x-6 mt-6">
-                <a href="https://github.com/neuxxkk" target="_blank" class="text-gray-400 hover:text-blue-500 transition duration-300 text-3xl">
+            <div class="flex justify-center space-x-6 mt-8 md:mt-10">
+                <a href="https://github.com/neuxxkk" target="_blank" rel="noopener noreferrer" aria-label="GitHub Profile" class="text-gray-400 hover:text-blue-500 transition duration-300 text-3xl">
                     <i class="fab fa-github"></i>
                 </a>
-                <a href="https://linkedin.com/in/vitornms" target="_blank" class="text-gray-400 hover:text-blue-500 transition duration-300 text-3xl">
-                <i class="fab fa-linkedin"></i> </a>
+                <a href="https://linkedin.com/in/vitornms" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile" class="text-gray-400 hover:text-blue-500 transition duration-300 text-3xl">
+                    <i class="fab fa-linkedin"></i>
+                </a>
             </div>
         </div>
     </section>
 
-    
-
+    <!-- Footer -->
     <footer class="bg-gray-900 py-8 text-center">
-        <p class="text-gray-500">&copy; <span id="currentYear"></span> Vitor Neuenschwander. Todos os direitos reservados.</p>
+        <p class="text-gray-500 text-sm">&copy; <span id="currentYear"></span> Vitor Neuenschwander. Todos os direitos reservados.</p>
     </footer>
 
     <script>
         // Smooth scroll for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
+                // Prevent default for all links, then check if it's a mobile menu link
+                const href = this.getAttribute('href');
+                const targetElement = document.querySelector(href);
+
+                if (targetElement) {
+                    e.preventDefault();
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+
+                    // If it's a mobile menu link, close the menu
+                    const mobileMenu = document.getElementById('mobile-menu');
+                    const mobileMenuButtonIcon = document.getElementById('mobile-menu-button').querySelector('i');
+                    if (!mobileMenu.classList.contains('hidden') && this.closest('#mobile-menu')) {
+                        mobileMenu.classList.add('hidden');
+                        mobileMenuButtonIcon.classList.remove('fa-times');
+                        mobileMenuButtonIcon.classList.add('fa-bars');
+                        document.getElementById('mobile-menu-button').setAttribute('aria-label', 'Abrir menu');
+                        document.getElementById('mobile-menu-button').setAttribute('aria-expanded', 'false');
+                    }
+                }
             });
         });
 
         // Set current year in footer
         document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileMenuButtonIcon = mobileMenuButton.querySelector('i');
+
+        mobileMenuButton.addEventListener('click', () => {
+            const isExpanded = mobileMenuButton.getAttribute('aria-expanded') === 'true' || false;
+            mobileMenuButton.setAttribute('aria-expanded', !isExpanded);
+            mobileMenu.classList.toggle('hidden');
+            if (mobileMenu.classList.contains('hidden')) {
+                mobileMenuButtonIcon.classList.remove('fa-times');
+                mobileMenuButtonIcon.classList.add('fa-bars');
+                mobileMenuButton.setAttribute('aria-label', 'Abrir menu');
+            } else {
+                mobileMenuButtonIcon.classList.remove('fa-bars');
+                mobileMenuButtonIcon.classList.add('fa-times');
+                mobileMenuButton.setAttribute('aria-label', 'Fechar menu');
+            }
+        });
     </script>
 
 </body>
 </html>
+
